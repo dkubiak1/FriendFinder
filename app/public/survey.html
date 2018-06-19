@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <style>
+            body {font-family: Arial, Helvetica, sans-serif;}
+            
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+            
+            /* Modal Content */
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
+            
+            /* The Close Button */
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            </style>
+</head>
+<body>
+<div class="container">
+        <!--<button id="myBtn">Open Modal</button>-->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+        
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text"></p>
+          </div>
+        
+        </div>
+
+    <h2>About You</h2>
+    <form action="/action_page.php">
+        My name:<br>
+        <input type="text" name="name" value="" placeholder="name" id="name">
+        <br>
+        My picture:<br>
+        <input type="text" name="pic" value="" placeholder="pic" id="pic">
+        <br><br>
+        
+        </form> 
+        <p>Please rate the following statements:</p>   
+    <br><h2>Question 1</h2><br>
+    <p>Star Wars prequels are actually good</p>
+    <select id="1">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <br><h2>Question 2</h2><br>
+    <p>I love pancakes more than chicken</p>
+    <select id="2">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <br><h2>Question 3</h2><br>
+    <p>Tuesdays are usually better than Wednesdays</p>
+    <select id="3">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <br><h2>Question 4</h2><br>
+    <p>Beer is a reasonable form of nutrition</p>
+    <select id="4">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <br><h2>Question 5</h2><br>
+    <p>UK Office was funnier</p>
+    <select id="5">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    
+    <br><h2>Question 6</h2><br>
+    <p>GSW vs. Cavs is not tedious at all</p>
+    <select id="6">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <br><h2>Question 7</h2><br>
+    <p>Harry Potter is overrated</p>
+    <select id="7">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <br><h2>Question 8</h2><br>
+    <p>Nas > Jay-Z</p>
+    <select id="8">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <br><h2>Question 9</h2><br>
+    <p>Kubrick > Spielberg</p>
+    <select id="9">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <br><h2>Question 10</h2><br>
+    <p>The Sopranos > The Wire</p>
+    <select id="10">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <br><input type="submit" value="Submit" id="submit" class="btn btn-lg btn-primary btn-block">
+</div>
+
+<script>
+    // Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+/*btn.onclick = function() {
+    modal.style.display = "block";
+}*/
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+    $('#submit').click(function() {
+        event.preventDefault();
+        if (!$('#name').val()) {
+            alert("Please Enter a Name");
+        } else {
+        var newFriend = {
+            name: $('#name').val().trim(),
+            pic: $('#pic').val().trim(),
+            scores: [
+                $('#1').val(), $('#2').val(), $('#3').val(), $('#4').val(), $('#5').val(), $('#6').val(), $('#7').val(), $('#8').val(), $('#9').val(), $('#10').val(),
+            ]
+
+        };
+        $.post("/api/friends", newFriend)
+        .then(function(data) {
+            console.log('Adding friend: '+newFriend);
+        });
+      /*  $.get("/api/thisMatch/", function(data) {
+        
+        $('.modal-content').html("Your Watch is:"+data.thisMatch.name);
+    });*/
+        //$('#modal-text').html("Your match is:"+thisMatch.name);
+        //$('.modal-content').html("Your match is:");
+        getMatch();
+        modal.style.display = "block";
+    }    
+    })
+
+   function getMatch() {
+    $.get("/api/thisMatch/", function(data) {
+        console.log("getting"+JSON.stringify(data.pic));
+        $('.modal-content').html("Your Match is:"+JSON.stringify(data.name)+"<br><img src='"+data.pic+"' height='400' width='450'>");
+    });
+
+   }
+
+</script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>
